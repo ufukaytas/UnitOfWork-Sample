@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AytassCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Title" Type="nvarchar" MaxLength="128" />
+          <Property Name="MetaK" Type="nvarchar" MaxLength="180" />
+          <Property Name="MetaD" Type="nvarchar" MaxLength="180" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="128" />
+          <Property Name="LongDescription" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="ContentID" />
+          </Key>
+          <Property Name="ContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Title" Type="nvarchar" MaxLength="128" />
+          <Property Name="MetaK" Type="nvarchar" MaxLength="180" />
+          <Property Name="MetaD" Type="nvarchar" MaxLength="180" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="128" />
+          <Property Name="LongDescription" Type="nvarchar(max)" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <Association Name="FK_Content_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Content" Type="Self.Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AytassCMSModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Content_Category" Association="Self.FK_Content_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Content" EntitySet="Content" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AytassCMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="MetaK" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="MetaD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="LongDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contents" Relationship="Self.FK_Content_Category" FromRole="Category" ToRole="Content" />
+        </EntityType>
+        <EntityType Name="Content">
+          <Key>
+            <PropertyRef Name="ContentID" />
+          </Key>
+          <Property Name="ContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="MetaK" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="MetaD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="LongDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Content_Category" FromRole="Content" ToRole="Category" />
+        </EntityType>
+        <Association Name="FK_Content_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Content" Type="Self.Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Content">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AytassCMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Contents" EntityType="Self.Content" />
+          <AssociationSet Name="FK_Content_Category" Association="Self.FK_Content_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Content" EntitySet="Contents" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AytassCMSModelStoreContainer" CdmEntityContainer="AytassCMSEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="AytassCMSModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MetaK" ColumnName="MetaK" />
+                <ScalarProperty Name="MetaD" ColumnName="MetaD" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="LongDescription" ColumnName="LongDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contents">
+            <EntityTypeMapping TypeName="AytassCMSModel.Content">
+              <MappingFragment StoreEntitySet="Content">
+                <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MetaK" ColumnName="MetaK" />
+                <ScalarProperty Name="MetaD" ColumnName="MetaD" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="LongDescription" ColumnName="LongDescription" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

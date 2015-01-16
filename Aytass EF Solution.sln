@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Entity", "01 Entity", "{6AA90FF5-D957-432F-8ADE-0B6E7C988E10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aytass.Entity", "Aytass.Entity\Aytass.Entity.csproj", "{C08F9CE3-9889-4C04-9C46-FD65C472B6F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 DAL", "02 DAL", "{85A9EB41-7B86-4A0D-80CE-A98492F1D912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aytass.DAL", "Aytass.DAL\Aytass.DAL.csproj", "{33C9FE2C-4210-45BC-B095-E1459D62BCE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Model", "03 Model", "{43F07CB1-0759-4EFF-8170-A15AD9AA5CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aytass.Model", "Aytass.Model\Aytass.Model.csproj", "{E872F032-E4C0-42B2-A6D7-5F898617E53B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 BLL", "04 BLL", "{44AEAE3C-EF7A-453E-BE8B-7E5079B5DE81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aytass.BLL", "Aytass.BLL\Aytass.BLL.csproj", "{C487F537-D72B-4405-8ACB-F11E8BFEB47C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Apps", "05 Apps", "{11B27762-B599-4771-8616-700103C2A924}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consoleApp", "consoleApp\consoleApp.csproj", "{FE0D4F34-4D9C-4F6A-B1A0-262FD319C735}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSiteTest", "http://localhost:49706", "{68812B36-A262-425A-8CC6-441A4D817989}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{c487f537-d72b-4405-8acb-f11e8bfeb47c}|Aytass.BLL.dll;{33C9FE2C-4210-45BC-B095-E1459D62BCE4}|Aytass.DAL.dll;{C08F9CE3-9889-4C04-9C46-FD65C472B6F9}|Aytass.Entity.dll;{E872F032-E4C0-42B2-A6D7-5F898617E53B}|Aytass.Model.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49706"
+		Debug.AspNetCompiler.PhysicalPath = "WebSiteTest\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49706\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49706"
+		Release.AspNetCompiler.PhysicalPath = "WebSiteTest\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49706\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "WebSiteTest\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C08F9CE3-9889-4C04-9C46-FD65C472B6F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08F9CE3-9889-4C04-9C46-FD65C472B6F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08F9CE3-9889-4C04-9C46-FD65C472B6F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08F9CE3-9889-4C04-9C46-FD65C472B6F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C9FE2C-4210-45BC-B095-E1459D62BCE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C9FE2C-4210-45BC-B095-E1459D62BCE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C9FE2C-4210-45BC-B095-E1459D62BCE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C9FE2C-4210-45BC-B095-E1459D62BCE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E872F032-E4C0-42B2-A6D7-5F898617E53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E872F032-E4C0-42B2-A6D7-5F898617E53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E872F032-E4C0-42B2-A6D7-5F898617E53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E872F032-E4C0-42B2-A6D7-5F898617E53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C487F537-D72B-4405-8ACB-F11E8BFEB47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C487F537-D72B-4405-8ACB-F11E8BFEB47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C487F537-D72B-4405-8ACB-F11E8BFEB47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C487F537-D72B-4405-8ACB-F11E8BFEB47C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE0D4F34-4D9C-4F6A-B1A0-262FD319C735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0D4F34-4D9C-4F6A-B1A0-262FD319C735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0D4F34-4D9C-4F6A-B1A0-262FD319C735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0D4F34-4D9C-4F6A-B1A0-262FD319C735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68812B36-A262-425A-8CC6-441A4D817989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68812B36-A262-425A-8CC6-441A4D817989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68812B36-A262-425A-8CC6-441A4D817989}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{68812B36-A262-425A-8CC6-441A4D817989}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C08F9CE3-9889-4C04-9C46-FD65C472B6F9} = {6AA90FF5-D957-432F-8ADE-0B6E7C988E10}
+		{33C9FE2C-4210-45BC-B095-E1459D62BCE4} = {85A9EB41-7B86-4A0D-80CE-A98492F1D912}
+		{E872F032-E4C0-42B2-A6D7-5F898617E53B} = {43F07CB1-0759-4EFF-8170-A15AD9AA5CBA}
+		{C487F537-D72B-4405-8ACB-F11E8BFEB47C} = {44AEAE3C-EF7A-453E-BE8B-7E5079B5DE81}
+		{FE0D4F34-4D9C-4F6A-B1A0-262FD319C735} = {11B27762-B599-4771-8616-700103C2A924}
+		{68812B36-A262-425A-8CC6-441A4D817989} = {11B27762-B599-4771-8616-700103C2A924}
+	EndGlobalSection
+EndGlobal
